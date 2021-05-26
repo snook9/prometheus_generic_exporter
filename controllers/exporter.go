@@ -11,7 +11,7 @@ import (
 )
 
 func MetricsIndex(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-type", "application/json;charset=UTF-8")
+	w.Header().Set("Content-type", "charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 
 	binancePoolMetrics := models.GetBinancePoolMetrics()

@@ -28,8 +28,8 @@ func GetBinancePoolMetrics() *binancePoolMetrics {
 
 //Encode a structure in prometheus exporter format
 func EncodeBinancePoolMetrics(binancePoolMetrics *binancePoolMetrics) *string {
-	metrics := "binance_pool_hashrate{name=\"" + binancePoolMetrics.Name + "\"" +
-		",creation_date=\"" + binancePoolMetrics.CreatedAt.String() + "\"} " +
+	metrics := `binance_pool_hashrate{name="` + binancePoolMetrics.Name + `"` +
+		`,creation_date="` + binancePoolMetrics.CreatedAt.String() + `"} ` +
 		fmt.Sprintf("%f", binancePoolMetrics.Hashrate)
 
 	return &metrics
