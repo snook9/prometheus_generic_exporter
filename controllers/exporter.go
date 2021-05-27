@@ -14,9 +14,9 @@ func MetricsIndex(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 
-	binancePoolMetrics := models.GetBinancePoolMetrics()
+	genericMetrics := models.GetGenericMetrics()
 
-	buffer := []byte(*models.EncodeBinancePoolMetrics(binancePoolMetrics))
+	buffer := []byte(*models.EncodeGenericMetrics(genericMetrics))
 
 	w.Write(buffer)
 }
